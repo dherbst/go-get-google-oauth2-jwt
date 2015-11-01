@@ -25,13 +25,14 @@ func main() {
 	}
 
 	tokensource := conf.TokenSource(oauth2.NoContext)
-	fmt.Printf("tokenSrc=%v\n", tokensource)
 	token, err := tokensource.Token()
 	if err != nil {
 		fmt.Printf("error getting token %v\n", err)
 		return
 	}
-	fmt.Printf("access_token=%v\nexpiry=%v\ntoken_type=%v\n", token.AccessToken, token.Expiry,
+	fmt.Printf("access_token=%v\nexpiry=%v\ntoken_type=%v\n",
+		token.AccessToken,
+		token.Expiry,
 		token.TokenType,
 	)
 }
